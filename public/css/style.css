@@ -1,0 +1,265 @@
+:root {
+    /* --primary-color: #5f2f01; */
+    --primary-color: #7a3d04;
+    --primary-color-hover: #532a04;
+    --secondary-color: #851400;
+    --secondary-color-hover: #660f00;
+    --primary-color-a: #ff902928;
+    --background-color: #ff902926;
+    --bar-height: 5rem;
+}
+
+body {
+    background-color: var(--background-color) !important;
+}
+
+#app {
+    position: relative !important;
+    min-height: 100vh !important;
+    padding-bottom: var(--bar-height);
+}
+
+.login-form {
+    background-color: var(--primary-color-a) !important;
+}
+
+.btn-action {
+    background-color: var(--secondary-color);
+    transition: 100ms all ease-in-out;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: .5rem 1rem;
+}
+
+.btn-action:hover {
+    color: #fff !important;
+    background-color: var(--secondary-color-hover) !important;
+}
+
+.footer {
+    color: #fff;
+    height: var(--bar-height);
+    background: var(--primary-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.footer-content .footer-title {
+    text-transform: uppercase;
+}
+
+.file-form {
+    background-color: var(--primary-color-a) !important;
+}
+
+table thead {
+    background-color: var(--primary-color) !important;
+    color: #fff;
+}
+
+.nav-link {
+    color: #fff !important;
+    transition: 100ms all linear;
+    font-size: .9rem;
+    border-bottom: .1rem solid transparent;
+}
+
+.nav-link:hover {
+    border-bottom: .1rem solid #fff;
+}
+
+.topnavbar {
+    background: var(--primary-color);
+}
+
+.header {
+    letter-spacing: .1rem;
+    font-size: 1.3rem;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-upload {
+    display: block;
+    text-transform: uppercase;
+    background-color: var(--primary-color);
+    color: #fff !important;
+    transition: 100ms all ease-in-out;
+}
+
+.file-upload:hover {
+    background-color: var(--primary-color-hover);
+}
+
+.alert:last-child {
+    margin-bottom: 0 !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+/* chat */
+.user-wrapper,
+.message-wrapper {
+    border: 1px solid #dddddd;
+    overflow-y: auto;
+}
+
+.user-wrapper {
+    height: 500px;
+    background-color: var(--primary-color-a);
+}
+
+.user {
+    cursor: pointer;
+    padding: 5px 0;
+    padding: .5rem;
+    position: relative;
+    border-bottom: .1rem solid rgba(0, 0, 0, .1);
+}
+
+.user:hover {
+    background: var(--primary-color-a);
+}
+
+.user:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.pending {
+    position: absolute;
+    left: 13px;
+    top: 9px;
+    background: #ff0000;
+    margin: 0;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    padding-left: 5px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.media-left {
+    margin: 0 10px;
+}
+
+.media-left img {
+    width: 64px;
+    border-radius: 64px;
+}
+
+.media-body p {
+    margin: 6px 0;
+    font-weight: bold;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+.message-wrapper {
+    padding: 10px;
+    height: calc(500px - 4rem);
+    background: #070707;
+    background: var(--primary-color-a);
+}
+
+.messages .message {
+    margin-bottom: 15px;
+}
+
+/* .messages .message:last-child {
+    margin-bottom: 0;
+} */
+
+.received,
+.sent {
+    width: 45%;
+    padding: 3px 10px;
+    border-radius: 10px;
+}
+
+.received {
+    background-color: #ffffff;
+}
+
+.sent {
+    background-color: var(--primary-color);
+    color: #fff;
+    float: right;
+}
+
+.message p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.date {
+    color: #777777;
+    font-size: 12px;
+}
+
+.active {
+    background-color: var(--primary-color-a);
+}
+
+.input-text {
+    display: flex;
+    flex-direction: row;
+}
+
+.input-text .message-content,
+textarea {
+    width: 75%;
+    padding: 12px 20px;
+    /* margin-top: 1rem; */
+    display: inline-block;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid #cccccc;
+    height: 3rem;
+    word-wrap: break-word;
+}
+
+.form-register-user {
+    background-color: var(--primary-color-a);
+}
+
+.btn-send-message {
+    width: 25%;
+}
+
+inpput[type="text"]:focus {
+    border: 1px solid #aaaaaa;
+}
+
+p {
+    font-size: 1rem;
+}
