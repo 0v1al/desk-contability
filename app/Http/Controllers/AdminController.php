@@ -166,15 +166,18 @@ class AdminController extends Controller
             foreach ($userFiles as $userFile) {
                 $userFileName = $userFile->name;
 
-                Storage::delete('/public/files/' . $userFileName);
+                Storage::delete('public/files/' . $userFileName);
                 $userFile->delete();
             }
 
-            $user->delete();
-
             $userMessages = Message::where('from', $userId)
                 ->where('to', $userId)->get();
-            $userMessages->delete();
+
+            if ($userMessages->count()) {
+                $userMessages->delete();
+            }
+
+            $user->delete();
 
             $request->session()->flash('message', 'Contul a fost șters cu success');
 

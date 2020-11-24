@@ -36,7 +36,6 @@
                         : route('user.user_files')
                     }}"
                     >
-                        <i class="fas fa-folder-open"></i>
                         Birou Contabilitate
                     </a>
                 @endauth
@@ -104,7 +103,7 @@
                             </li>
                         @else
                             <li class="nav-item mr-3">
-                                <a class="nav-link text-uppercase" href="/login">Conectare<span class="sr-only">(current)</span></a>
+                                <a class="nav-link text-uppercase" href="{{ route('login') }}">Conectare<span class="sr-only">(current)</span></a>
                             </li>
                         @endif
                     </ul>

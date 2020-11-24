@@ -4,7 +4,7 @@
 <div class="container d-flex align-items-center justify-content-center">
     <form class="w-50 p-5 shadow-sm border form-register-user" method="POST" action="{{ route('admin.register_user') }}">
         @csrf
-        <h3 class="text-uppercase font-weight-bold">Înregistrare Clienți</h3>
+        <h1 class="text-uppercase font-weight-bold">Înregistrare Clienți</h1>
         <p class="pb-2">Înregistrează un client aici pentru a putea avea acces la aplicație</p>
         <div class="form-group">
             <label for="exampleInputName">Nume complet:</label>

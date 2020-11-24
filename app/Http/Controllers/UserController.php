@@ -83,8 +83,6 @@ class UserController extends Controller
         $userFileId = $request->input('userFileId');
         $userId = auth()->user()->id;
 
-        $user = User::where('id', $userId)->first();
-
         $userFile = UserFile::where('user_id', $userId)
             ->where('id', $userFileId)
             ->first();
@@ -94,8 +92,6 @@ class UserController extends Controller
 
             Storage::delete('public/files/' . $userFileName);
             $userFile->delete();
-
-            $userFiles = UserFile::all();
 
             $request->session()->flash('message', 'Fișierul a fost șters cu success');
 

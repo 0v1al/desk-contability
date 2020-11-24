@@ -101,7 +101,7 @@
                 $.ajax({
                     type: "post",
                     url: "{{ route('chat.messages') }}",
-                    dataType: 'json',
+                    // dataType: 'json',
                     data: {
                         receiverId: receiverId,
                         message: message
@@ -110,7 +110,7 @@
                 }).done((response, status, jqXhr) => {
                 }).fail((jqXhr, status, error) => {
                     console.error(`error ${status}, ${error}`);
-                }).finally(() => {
+                }).always(() => {
                     scrollToBottom();
                 });
             }
@@ -123,7 +123,7 @@
                 $.ajax({
                     type: "post",
                     url: "{{ route('chat.messages') }}",
-                    dataType: 'json',
+                    // dataType: 'json',
                     data: {
                         receiverId: receiverId,
                         message: message
@@ -132,7 +132,7 @@
                 }).done((response, status, jqXhr) => {
                 }).fail((jqXhr, status, error) => {
                     console.error(`error ${status}, ${error}`);
-                }).finally(() => {
+                }).always(() => {
                     scrollToBottom();
                 });
             }

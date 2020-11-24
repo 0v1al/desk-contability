@@ -82,7 +82,10 @@
                             userId: $userId
                         }
                     }).done((response, status, jqXhr) => {
-                        location.reload();
+                        const { success } = response;
+                        if (success) {
+                            location.reload();
+                        }
                     }).fail((jqXhr, status, error) => {
                         console.error(`error: ${status}, ${error}`);
                     });

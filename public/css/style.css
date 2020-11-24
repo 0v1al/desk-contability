@@ -1,10 +1,11 @@
 :root {
     /* --primary-color: #5f2f01; */
-    --primary-color: #7a3d04;
+    --primary-color: #5f3004;
     --primary-color-hover: #532a04;
     --secondary-color: #851400;
     --secondary-color-hover: #660f00;
-    --primary-color-a: #ff902928;
+    /* --primary-color-a: #ff902928; */
+    --primary-color-a: #fa8b2383;
     --background-color: #ff902926;
     --bar-height: 5rem;
 }
@@ -17,6 +18,57 @@ body {
     position: relative !important;
     min-height: 100vh !important;
     padding-bottom: var(--bar-height);
+}
+
+.home-container {
+    /* position: relative; */
+    height: 100vh;
+}
+
+.bg-img {
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+.overlay::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.home-content {
+    color: #fff;
+}
+
+.btn-home {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.home-title {
+    font-size: 4rem;
+    letter-spacing: .3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.home-desc {
+    font-size: 1.3rem;
 }
 
 .login-form {

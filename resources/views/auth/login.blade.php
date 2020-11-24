@@ -4,7 +4,7 @@
 <div class="container d-flex align-items-center justify-content-center">
     <form class="w-50 p-5 shadow-sm border login-form" method="POST" action="{{ route('login.login') }}">
         @csrf
-        <h3 class="text-uppercase font-weight-bold">Conectare</h3>
+        <h1 class="text-uppercase font-weight-bold">Conectare</h1>
         <p class="pb-2">Conectează-te aici pentru a putea utiliza servicile noastre!</p>
         <div class="form-group">
             <label for="exampleInputEmail1">Adresa Email:</label>
