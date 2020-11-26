@@ -29,7 +29,9 @@ class AdminController extends Controller
     public function user_files($id)
     {
         $user = User::where('id', $id)->first();
-        $userFiles = $user->files;
+        $userFiles = $user->files->filter(function ($userFile) {
+            return $userFile->uploaded_by_admin != true;
+        })->all();
 
         return view('admin.userfiles', [
             'user' => $user,
@@ -170,11 +172,16 @@ class AdminController extends Controller
                 $userFile->delete();
             }
 
-            $userMessages = Message::where('from', $userId)
-                ->where('to', $userId)->get();
+            $userMessages = Message::where(function ($query) use ($userId) {
+                $query->where('from', $userId);
+            })->orWhere(function ($query) use ($userId) {
+                $query->where('to', $userId);
+            })->get();
 
             if ($userMessages->count()) {
-                $userMessages->delete();
+                $userMessages->map(function ($message) {
+                    $message->delete();
+                });
             }
 
             $user->delete();
@@ -210,9 +217,11 @@ class AdminController extends Controller
             $fileType = $file->getClientMimeType();
             $fileName = $file->getClientOriginalName();
 
-            $fileAlready = UserFile::where('name', $fileName)
-                ->where('user_id', $userId)
-                ->first();
+            // $fileAlready = UserFile::where('name', $fileName)
+            //     ->where('user_id', $userId)
+            //     ->first();
+
+            $fileAlready = UserFile::where('name', $fileName)->first();
 
             if ($fileAlready) {
                 return redirect()->back()

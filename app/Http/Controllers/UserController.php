@@ -26,9 +26,11 @@ class UserController extends Controller
             $fileType = $file->getClientMimeType();
             $fileName = $file->getClientOriginalName();
 
-            $fileAlready = UserFile::where('name', $fileName)
-                ->where('user_id', auth()->user()->id)
-                ->first();
+            // $fileAlready = UserFile::where('name', $fileName)
+            //     ->where('user_id', auth()->user()->id)
+            //     ->first();
+
+            $fileAlready = UserFile::where('name', $fileName)->first();
 
             if ($fileAlready) {
                 return redirect()->back()
